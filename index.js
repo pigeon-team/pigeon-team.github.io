@@ -27,3 +27,28 @@ modeSwitch.addEventListener("click", () => {
     }
 });
 
+const changeFavicon = link => {
+    let $favicon = document.querySelector('link[rel="icon"]');
+    // If a <link rel="icon"> element already exists,
+    // change its href to the given link.
+    if ($favicon !== null) {
+        $favicon.href = link;
+        // Otherwise, create a new element and append it to <head>.
+    } else {
+        $favicon = document.createElement("link");
+        $favicon.rel = "icon";
+        $favicon.href = link;
+        document.head.appendChild($favicon);
+    }
+};
+
+document.addEventListener('visibilitychange', function () {
+    if (document.hidden) {
+        document.title = '喔唷，崩溃啦';
+        changeFavicon('./index-res/images/quit.png');
+    }
+    else {
+        document.title = '咦，又好了';
+        setTimeout(() => { document.title = 'pigeonの小站' }, 1000);
+    }
+})
