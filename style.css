@@ -26,7 +26,7 @@ body {
 	position: absolute;
 	/*top: 0;*/
 	/*left: 0;*/
-	width: calc(100% - 125px);
+	width: calc(100vw - 100px);
 	height: 100%;
 	border: 0;
 }
@@ -43,12 +43,13 @@ body {
 
 /* 主体显示盒 */
 .main_body {
+	display: flex;
 	position: fixed;
+	margin: 0 0 0 100px;
 	top: 0;
-	left: 110px;
+	left: 0;
 	height: 100%;
 	width: 100%;
-	padding: 20px;
 }
 
 .shell {
