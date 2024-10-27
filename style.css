@@ -42,7 +42,7 @@ body {
 }
 
 /* 主体显示盒 */
-.mainbody {
+.main_body {
 	position: fixed;
 	top: 0;
 	left: 110px;
